@@ -2,6 +2,7 @@
   "name": "community-discord-bot",
   "version": "1.0.0",
   "description": "A Discord bot to support Community team collect feedbacks from players about their game’s experience",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,7 +18,8 @@
   },
   "homepage": "https://github.com/quangtruong452001/community-discord-bot#readme",
   "dependencies": {
-    "discord.js": "^14.14.1"
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
     "eslint": "^8.55.0",
