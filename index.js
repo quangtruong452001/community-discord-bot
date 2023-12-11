@@ -21,10 +21,12 @@ const commandFiles = fs
 
 for (const file of commandFiles) {
   const filePath = path.join(commandsPath, file);
+
+  // Deconstruct the exported command from each file because import() returns an object
   const { command } = await import(pathToFileURL(filePath));
 
   // Set a new item in the Collection with the key as the command name and the value as the exported module
-  
+
   if ('data' in command && 'execute' in command) {
     client.commands.set(command.data.name, command);
     console.log(
@@ -36,8 +38,6 @@ for (const file of commandFiles) {
     );
   }
 }
-
-
 
 client.on(Events.InteractionCreate, async (interaction) => {
   if (!interaction.isChatInputCommand()) return;

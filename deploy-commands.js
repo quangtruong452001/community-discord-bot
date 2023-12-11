@@ -18,7 +18,10 @@ const commandFiles = fs
 
 for (const file of commandFiles) {
   const filePath = path.join(commandsPath, file);
+
+  // Deconstruct the exported command from each file because import() returns an object
   const { command } = await import(pathToFileURL(filePath));
+
   // Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
   if ('data' in command && 'execute' in command) {
     commands.push(command.data.toJSON());
