@@ -12,7 +12,7 @@ client.commands = new Collection();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-let commandsPath = path.join(__dirname, 'src\\commands');
+let commandsPath = path.join(__dirname, 'src\/commands');
 
 // Grab all the command files from the commands directory created earlier
 const commandFiles = fs
