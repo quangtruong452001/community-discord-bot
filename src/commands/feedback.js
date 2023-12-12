@@ -12,9 +12,13 @@ export const command = {
     ),
   async execute(interaction) {
     const feedback = interaction.options.getString('feedback');
+
+    console.log(interaction.user);
+    console.log(interaction.guild);
+
     console.log(`Feedback received: ${feedback}`);
     await interaction.reply(
-      'Thanks for reaching out! We\'ll be passing this along to the team directly! Good luck playing the game!'
+      "Thanks for reaching out! We'll be passing this along to the team directly! Good luck playing the game!"
     );
   },
 };
