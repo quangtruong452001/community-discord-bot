@@ -7,7 +7,7 @@ Or: </br> Join my Discord server to test: [link](https://discord.gg/fq7Mz6h5)
 ## Commands
 
 - `/ping`: should return `Pong!` if the bot is working
-- `/feedback <options>` receive the feeback and send it to [discord-feedback-server](https://github.com/quangtruong452001/community-discord-bot) the return message "Thanks for reaching out! We'll be passing this along to the team directly! Good luck playing the game!"
+- `/feedback <options>` receive the feedback and send it to [discord-feedback-server](https://github.com/quangtruong452001/community-discord-bot) and return message "Thanks for reaching out! We'll be passing this along to the team directly! Good luck playing the game!"
 
 ## Deploy
 
