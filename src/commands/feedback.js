@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from 'discord.js';
-
+import axios from 'axios';
 export const command = {
   data: new SlashCommandBuilder()
     .setName('feedback')
@@ -11,12 +11,22 @@ export const command = {
         .setRequired(true)
     ),
   async execute(interaction) {
-    const feedback = interaction.options.getString('feedback');
+    const feedback = {
+      comment: interaction.options.getString('feedback'),
+      discord_userID: interaction.user.id,
+      discord_username: interaction.user.username,
+      discord_channelID: interaction.channelId,
+    };
 
-    console.log(interaction.user);
-    console.log(interaction.guild);
+    axios
+      .post(process.env.SERVER, feedback)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
 
-    console.log(`Feedback received: ${feedback}`);
     await interaction.reply(
       "Thanks for reaching out! We'll be passing this along to the team directly! Good luck playing the game!"
     );
